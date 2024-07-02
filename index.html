@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparaciones FD</title>
+</head>
+<body>
+  <h1>Reparaciones FD</h1>
+
+  <form id="serviceForm">
+    <label for="serviceType">¿Qué servicio necesitas?</label>
+    <select id="serviceType">
+      <option value="">Selecciona un servicio</option>
+      <option value="repair">Reparación</option>
+      <option value="purchase">Compra de teléfono</option>
+    </select>
+
+    <div id="repairForm" style="display: none;">
+      <label for="problemDescription">Describe el problema:</label>
+      <textarea id="problemDescription"></textarea>
+      <button type="button" onclick="generateOrderNumber()">Track</button>
+      <p id="orderNumber"></p>
+    </div>
+
+    <div id="purchaseForm" style="display: none;">
+      <h2>Lista de Teléfonos disponibles:</h2>
+      <ul id="phoneList"></ul>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>
