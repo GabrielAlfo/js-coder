@@ -12,7 +12,7 @@ fetch('stock.json')
     const productContainer = document.querySelector('.products');
 
     data.forEach(product => {
-  
+
       const productElement = document.createElement('div');
       productElement.classList.add('products');
 
@@ -42,7 +42,7 @@ fetch('stock.json')
         addToCart(product)
         Swal.fire("Se añadio un producto al carrito");
     });
-      
+
       productElement.appendChild(addToCartButton);
       productContainer.appendChild(productElement);
     });
@@ -54,44 +54,48 @@ fetch('stock.json')
   function addToCart(product) {
     cart.push(product);
     console.log('Producto agregado al carrito:', product);
+    mostrarCarrito();
   }
-  function removeFromCart(product) {
-    cart = cart.filter(item => item !== product);
-    console.log('Producto eliminado del carrito:', product);
+  function deleteToCart(index) {
+    cart.splice(index, 1);
+    mostrarCarrito();
   }
 
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const product = {
-        name: button.previousElementSibling.previousElementSibling.textContent,
-        price: parseFloat(button.previousElementSibling.textContent.slice(1))
-      };
+  function mostrarCarrito() {
+    const carritoElement = document.getElementById('carrito');
+    carritoElement.innerHTML = '';
   
-      cart.push(product);
-      updateCart();
-    });
-  });
+    let total = 0;
   
-  function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
+    for (let i = 0; i < cart.length; i++) {
+      const producto = cart[i];
+  
+      const productoElement = document.createElement('div');
+      productoElement.textContent = `${producto.nombre} - $${producto.precio}`;
+  
+      const botonEliminar = document.createElement('button');
+      botonEliminar.textContent = 'Eliminar';
+      botonEliminar.addEventListener('click', () => {
+        deleteToCart(i)
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Elemento eliminado Correctamente",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      });
+  
+      productoElement.appendChild(botonEliminar);
+      carritoElement.appendChild(productoElement);
+  
+      total += producto.precio;
+    }
+  
+    const totalElement = document.createElement('div');
+    totalElement.textContent = `Total: $${total.toFixed(2)}`;
+    carritoElement.appendChild(totalElement);
   }
-  
-  function updateCart() {
-    cartItems.innerHTML = '';
-    totalPrice = 0;
-    cart.forEach(product => {
-      const cartItem = document.createElement('div');
-      const cartbtn = document.createElement('button');
-      cartItem.textContent = `${product.nombre} - $${product.precio}`;
-      cartItems.appendChild(cartItem);
-  
-      totalPrice += product.price;
-    });
-  
-    totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
-  }
-  
 
   
   // Track de Pedido
