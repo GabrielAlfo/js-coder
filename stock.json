@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nombre": "Samsung",
+        "precio": 799.99,
+        "descripcion": "El Samsung Galaxy S21 Ultra es un smartphone con una pantalla de 6.7 pulgadas, memoria interna de 128GB, cámara trasera de 108MP + 5MP + 2MP + 8MP, y procesador de 12nm.",
+        "imagen": "./images/Samsung.jpg",
+        "stock": 100
+    },
+    {
+        "id": 2,
+        "nombre": "Xiaomi",
+        "precio": 599.99,
+        "descripcion": "El Xiaomi Mi 11 Ultra es un smartphone con una pantalla de 6.7 pulgadas, memoria interna de 128GB, cámara trasera de 108MP + 5MP + 2MP + 8MP, y procesador de 12nm.",
+        "imagen": "./images/Xiaomi.jpeg",
+        "stock": 50
+    },
+    {
+        "id": 3,
+        "nombre": "iPhone",
+        "precio": 1099.99,
+        "descripcion": "El Apple iPhone 12 Pro Max es un smartphone con una pantalla de 6.1 pulgadas, memoria interna de 256GB, cámara trasera de 12MP",
+        "imagen": "./images/iphone.png",
+        "stock": 80
+    },
+    {
+        "id": 4,
+        "nombre": "Motorola",
+        "precio": 799.99,
+        "descripcion": "El Motorola Moto G84 5G no solo impresiona por su estilo, sino también por su potencia. Con el procesador Snapdragon® 695 5G, 8 GB de RAM y 256 GB de almacenamiento",
+        "imagen": "./images/Motorola.jpg",
+        "stock": 150
+    },
+    {
+        "id": 5,
+        "nombre": "Alcatel",
+        "precio": 899.99,
+        "descripcion": "El Alcatel P30 Pro es un smartphone con una pantalla de 6.7 pulgadas, memoria interna de 128GB, cámara trasera de 108MP + 5MP + 2MP + 8MP, y procesador de 12nm.",
+        "imagen": "./images/Alcatel.jpg",
+        "stock": 75
+    }
+    ]

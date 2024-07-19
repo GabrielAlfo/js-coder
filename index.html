@@ -3,34 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css" rel="stylesheet">
   <title>Reparaciones FD</title>
 </head>
 <body>
-  <h1>Reparaciones FD</h1>
 
-  <form id="serviceForm">
-    <label for="serviceType">¿Qué servicio necesitas?</label>
-    <select id="serviceType">
-      <option value="">Selecciona un servicio</option>
-      <option value="repair">Reparación</option>
-      <option value="purchase">Compra de teléfono</option>
-    </select>
+  <div class="container">
+    <header>
+      <h1>Reparaciones FD</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Carrito</a></li>
+          <li><a href="#">Reparaciones</a></li>
+        </ul>
+      </nav>
+    </header>
+    <form id="serviceForm">
+      <label for="serviceType">¿Qué servicio necesitas?</label>
+      <select id="serviceType">
+        <option value="">Selecciona un servicio</option>
+        <option value="repair">Reparación</option>
+        <option value="purchase">Compra de teléfono</option>
+      </select>
+  
+      <div id="repairForm" style="display: none;">
+        <label for="problemDescription">Describe el problema:</label>
+        <textarea id="problemDescription"></textarea>
+        <button type="button" onclick="generateOrderNumber()">Track</button>
+        <p id="orderNumber"></p>
+      </div>
+  
+      <div id="purchaseForm" style="display: none;">
+        <h2>Lista de Teléfonos disponibles:</h2>
+        <ul id="phoneList"></ul>
+      </div>
+  
+      <button type="submit">Enviar</button>
+    </form>
+    <main>
+      <section class="products">
+        <div class="product">
+          <img src="/images/samsung.jpg" alt="Product Image">
+          <h3>Samsung</h3>
+          <p>$110</p>
+          <button id="b1" class="add-to-cart">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+          <img src="/images/iphone.png" alt="Product Image">
+          <h3>iPhone</h3>
+          <p>$160</p>
+          <button id="b2" class="add-to-cart">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+          <img src="/images/motorola.jpg" alt="Product Image">
+          <h3>Motorola</h3>
+          <p>$150</p>
+          <button id="b3" class="add-to-cart">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+          <img src="/images/xiaomi.jpeg" alt="Product Image">
+          <h3>Xiaomi</h3>
+          <p>$80</p>
+          <button id="b4" class="add-to-cart">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+          <img src="/images/alcatel.jpg" alt="Product Image">
+          <h3>Alcatel</h3>
+          <p>$100</p>
+          <button id="b5" class="add-to-cart">Añadir al Carrito</button>
+        </div>
+      </section>
 
-    <div id="repairForm" style="display: none;">
-      <label for="problemDescription">Describe el problema:</label>
-      <textarea id="problemDescription"></textarea>
-      <button type="button" onclick="generateOrderNumber()">Track</button>
-      <p id="orderNumber"></p>
-    </div>
+      <section class="cart">
+        <h2>Carrito</h2>
+        <div class="cart-items"></div>
+        <p class="total-price">Total: $0.00</p>
+      </section>
+    </main>
 
-    <div id="purchaseForm" style="display: none;">
-      <h2>Lista de Teléfonos disponibles:</h2>
-      <ul id="phoneList"></ul>
-    </div>
-
-    <button type="submit">Enviar</button>
-  </form>
+    <footer>
+      <p>&copy; 2024 Reparaciones FD. Todos los Derechos reservados.</p>
+    </footer>
+  </div>
 
   <script src="app.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
